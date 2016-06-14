@@ -294,7 +294,7 @@ Neuron.prototype = {
 
     for (var type in this.connections)
       for (var connection in this.connections[type])
-        this.connections[type][connection].weight = Math.random() * .2 - .1;
+        this.connections[type][connection].weight = Math.random() * 2.0 - 1.0;
     this.bias = Math.random() * 2.0 - 1.0;
 
     this.old = this.state = this.activation = 0;
@@ -746,7 +746,7 @@ Neuron.connection = function Connection(from, to, weight) {
   this.ID = Neuron.connection.uid();
   this.from = from;
   this.to = to;
-  this.weight = typeof weight == 'undefined' ? Math.random() * .2 - .1 :
+  this.weight = typeof weight == 'undefined' ? Math.random() * 2.0 - 1.0 :
     weight;
   this.gain = 1;
   this.gater = null;
