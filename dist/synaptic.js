@@ -8,7 +8,7 @@ var Layer   = require('./layer')
                                         ARCHITECT
 *******************************************************************************************/
 
-// Collection of useful built-in architectures
+// Colection of useful built-in architectures
 var Architect = {
 
   // Multilayer Perceptron
@@ -1164,7 +1164,7 @@ function Neuron() {
   this.selfconnection = new Neuron.connection(this, this, 0); // weight = 0 -> not connected
   this.squash = Neuron.squash.LOGISTIC;
   this.neighboors = {};
-  this.bias = Math.random() * .2 - .1;
+  this.bias = Math.random() * 2.0 - 1.0;
 }
 
 Neuron.prototype = {
@@ -1430,7 +1430,7 @@ Neuron.prototype = {
     for (var type in this.connections)
       for (var connection in this.connections[type])
         this.connections[type][connection].weight = Math.random() * .2 - .1;
-    this.bias = Math.random() * .2 - .1;
+    this.bias = Math.random() * 2.0 - 1.0;
 
     this.old = this.state = this.activation = 0;
   },

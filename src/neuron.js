@@ -29,7 +29,7 @@ function Neuron() {
   this.selfconnection = new Neuron.connection(this, this, 0); // weight = 0 -> not connected
   this.squash = Neuron.squash.LOGISTIC;
   this.neighboors = {};
-  this.bias = Math.random() * .2 - .1;
+  this.bias = Math.random() * 2.0 - 1.0;
 }
 
 Neuron.prototype = {
